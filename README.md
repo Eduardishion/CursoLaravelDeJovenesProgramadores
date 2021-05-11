@@ -2,7 +2,7 @@
 ## es necesario usar MariaDB como base de datos 
 
 
-![alt preview](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![alt preview](https://github.com/Eduardishion/CursoLaravelDeJovenesProgramadores/blob/master/review.png)
 
 ## para correr el back-end
 ```
