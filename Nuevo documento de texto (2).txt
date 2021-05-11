@@ -1,0 +1,83 @@
+Noelia - Tu (Lyrics) nuscar 
+me gustas tu valentin elizalde 
+
+modificar el proyecto laravel full stack 
+que esta estructurado con react y laravel 
+
+y usaremos el patron MVC
+
+CREAR TABLAS 
+
+como crear una tabla en laravel 
+se usa el siguiente comando 
+	
+	comando 1 independiente solo para hacer una tabla 
+	php artisan make:migration create_carrito_table --create=carrito
+
+y para crear la migracion, el controlador y el modelo al mismo tiempo hacer el siguiente comando simikar al anterior pero con la diferecia que los metodos crearan otros archivos al mismo tiempo 
+
+crea un modelo,una migracion y va a crear un controlador 
+	
+	comando 2 para hacer modelo,, migracion, controlador 	
+	php artisan make:model carrito_info -mcr
+
+
+//comando oficial de laravel 8 en pagina oficial 
+	php artisan make:migration create_nombreTabla_table --create=nombreTabla
+
+
+sintaxis para escribir los tipos de columna en laravel 
+
+https://laravel.com/docs/6.x/migrations#creating-columns
+
+despues de haber hecho la tabla o las tablas en laravel de esta forma 
+
+ Schema::create('carrito', function (Blueprint $table) {
+            $table->bigIncrements('cod_carrito'); //id con auto incremento y primary key 
+            $table->string('descripcion_larga');  //tipo de dato de cadena 
+            $table->decimal('precio');            //tipo de dato con punto decimal 
+            $table->string('imagen');             //para guardar imagen 
+
+            //enlace de tabla producto con tabla carrito  
+            $table->bigInteger('cod_producto')->index();
+            //enlazamos la tabla del producto a esta tabla que estamos creando
+            $table->foreign('cod_producto')->references('cod_producto')->on('productos');
+
+});
+
+
+lo que sigue es subir la migracion a la base de datos con ls siguiente sentencia
+	
+	usar este comando solo cuando se uso comando independiente solo para hacer 	una tabla
+
+	usar este comando cuando se uso el segundo comando 2 para hacer modelo,, 		migracion, controlador por que tambien sirve 
+	
+		php artisan migrate:refresh  
+	
+	
+este comando toma todas las migraciones y las sube a la base de datos 
+		
+despues hacer las migraciones podemos ver la tabla en el gestor de base datos en este caso mariadb 
+
+
+CREACION DE MODELOS 
+
+para crear un modelo y un controlador se hace lo siguiente 
+	php artisan make:model Producto -C
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+

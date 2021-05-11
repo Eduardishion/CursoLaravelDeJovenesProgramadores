@@ -1,0 +1,286 @@
+una pagina muy buena de como usar laravel y aprender gratis https://styde.net/
+https://styde.net/curso-de-css-grid/ curso de grid layout
+https://styde.net/laravel-5/ laravel version 5 
+
+
+para trabajar con laravel necesitamos 
+necesitamos agregar a php a las variables 
+de entorno y descargar el gestos de paquetes composer
+
+para ello debemos agregar en las variables de entorno ls siguiente 
+sintaxis 
+;C:\xampp\php
+
+
+despues verificamos que ya funiona con 
+php -v
+
+despues descargaremos composer
+https://getcomposer.org/
+
+descargarmos e instalamos 
+
+despues verificamos si se instalo composer
+
+escribiendo en consola
+
+	composer
+
+despues instalamos lavarel
+	https://laravel.com/docs/6.x
+
+con la siguiente sintaxis
+	composer global require laravel/installer
+
+para verificar que esta instalado usamos en cmd 
+	laravel
+
+ahora si podemos crear un proyecto de laravel
+podemos crear una nueva carpeta con mkdir y entrar en ella con cd
+
+dentro usamos la siguiente sintaxis para crear el proyecto
+
+	laravel new nombreDelProyecto
+
+despues solo esperar que cree los directorios necesrios automaticamente 
+
+ahora solo queda iniciar el servidor del proyecto de la siguiente manera
+entrando con cd al directorio creado por laravel 
+
+despues iniciamos el servidor con 
+	php artisan serve
+
+y entramos por el explorador mediante la siguiente url 
+	http://127.0.0.1:8000/
+
+o la ruta que nos indica en la consola
+
+en vscode se recomiendo instalar la extencion 
+	Laravel Artisan 
+
+carpetas importantes
+
+	views  : para crear template en html 
+	routes : para crear las rutas endpoint de acceso para cera apis 
+
+
+para modificar que base de datos vamos usar nos vamos a  .env que esta en el proyecto
+
+despues ubicamos 
+	DB_DATABASE=nombre la base de datos 
+
+cambiamos el mombre de la base datos 
+	DB_DATABASE=gestion_bodega
+	
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=gestion_bodega
+DB_USERNAME=root
+DB_PASSWORD=
+
+y al final debe quedar asi 
+	DB_CONNECTION=mysql
+	DB_HOST=127.0.0.1
+	DB_PORT=3307
+	DB_DATABASE=gestion_bodega
+	DB_USERNAME=root
+	DB_PASSWORD=12345
+
+
+recordar que debemos tener la base da datos en el gestor 
+para este ejemplo usamos 
+
+CREATE DATABASE gestion_bodega;
+
+USE gestion_bodega;
+
+CREATE TABLE personal(
+	rut VARCHAR(50) NOT NULL, 
+	nombre VARCHAR(50) NOT NULL,
+	apellido VARCHAR(50) NOT NULL,
+	cargo VARCHAR(50) NOT NULL,
+	contraseña VARCHAR(50) NOT NULL,
+	PRIMARY KEY(rut)
+)charset=latin1;
+
+CREATE TABLE productos(
+	cod_producto VARCHAR(20) NOT NULL,
+	descripcion VARCHAR(50) NOT NULL,
+	stock VARCHAR(20) NOT  NULL,
+	proveedor VARCHAR(50) NOT NULL,
+	fecha_ingreso VARCHAR(30) NOT NULL,
+	PRIMARY KEY(cod_producto)
+)charset=latin1;
+
+CREATE TABLE entregas(
+	rut VARCHAR(20) NOT NULL,
+	cod_producto VARCHAR(50) NOT NULL,
+	cantidad VARCHAR(50) NOT NULL,
+	fecha_entrega VARCHAR(30) NOT NULL
+)charset=latin1;
+
+
+INSERT INTO productos(cod_producto, descripcion, stock, proveedor, fecha_ingreso) VALUES
+("100", "Casco de seguridad", "50", "Vicsa S.A", "20-04-2016"),
+("101", "Guantes de seguridad", "50", "Fesam LTDA", "2016-04-22"),
+("102", "Calzado de seguridad", "50", "Litios S.A", "2016-04-22");
+
+
+INSERT INTO personal(rut, nombre, apellido, cargo, contraseña) VALUES
+("180332403", "Juan", "Pérez", "Admin", MD5("JP2016")),
+("153204209", "Blanca", "Ríos", "Bodega", md5("BR2016"));
+
+despues en la consola migramos la base datos con el siguiente comando
+
+	php artisan migrate 
+
+orden para que a la base de datos se creen las tablas y atributos 
+necesarios para poder trabajar con lareavel y la base de datos 
+
+al realizar este comando se crearan las migraciones en la base datos 
+y conectara con la base de datos
+
+para verificar que se creo satisfactoriamente las migraciones 
+apareceran en la carpeta databases, en la carpeta migrations
+
+hay podemos verificar como se han creado en php la migraciones 
+
+despues para asignar laravel funcione con react vamos 
+a usarl el siguiente comando, ya que usa VUE como capa de vista por default 
+
+comando viejo
+	php artisan preset react 
+	
+version actual para laravel 7
+	
+	composer require laravel/ui
+	php artisan ui react
+
+despues usar 
+	npm install
+
+que instala las dependencias que nos permite usar react 
+
+despues de que se alla instaldo todo 
+podemos volver a correr el servidor con 
+	php artisan serve
+
+
+despues recordar que ya podemos usar react 
+y todos los componentes que vallamos haciendo 
+los debemos ingresar el la carpeta 
+
+	./resources/js/
+
+despues como usamos reactstrap debemos instalarlo con los comandos
+que despues el proyecto los usaran para el buen funcionamiento 
+de reactstrap
+
+instalar las dependencias nuevamente las que usamos 
+
+	npm install --save bootstrap 
+	npm install --save reactstrap react react-dom
+
+al usar estos comandos se actualizaran todas las dependencias 
+
+
+
+recordar que en la ruta inicial debemos cambiar el body con id="root"
+en el archivo de vistas, alojado en resources
+
+ <body>
+     <div id="root">
+
+     </div>
+ </body>
+
+ahora usar 
+	npm run dev 
+para poder integrar react 
+
+
+si existe un problema de correr react en conjunto con laravel 
+debemos tener encuenta que version de node estamos usando 
+yo por ejemplo estoy usando la versin 10 y me tiro error
+
+en la consola me recomienda instalar la version Node v12.14
+
+pero ya tengo cosas instaladas y no quiero volver a instalar todo 
+entonces encontre una solucion que dice que podemos volver a reinstalar todos los paquetes nuevamente, usando los siguientes comandos 
+
+I resolve this error running following code
+
+	npm cache clean
+	npm cache clean --force  para forzarlo 
+then delete node_modules directory from my project structure manually or with following command
+
+	rm -rf node_modules
+
+elimnar tambien package-lock
+delete package-lock.json file
+
+y luego reinstalar todo 
+After That install dependencies again using
+
+	npm install
+
+
+despuesde reinstalar todo vulve a probar 
+	npm run dev 
+
+este comando corre el proyecto completo de laravel 
+donde ya esta inscrustado react 			
+
+si eso no funciona ahora provamos ya usar mejor node 12
+y podemos descargarlo desde 
+
+https://nodejs.org/es/download/releases/
+
+yo descargue 
+	/v12.16.3/
+
+por que la ultima version solo es para windows 8.1
+
+ahora devemos asociar el archivo index.js de react 
+con el proyecto de laravel 
+
+eso se hace archivo webpack.mix.js y se modifica asi 
+
+
+mix.js('resources/js/app.js', 'public/js')
+    .react()
+    .sass('resources/sass/app.scss', 'public/css');
+
+lo cambiamos a 
+
+mix.js('resources/js/index.js', 'public/js')
+    .react()
+    .sass('resources/sass/app.scss', 'public/css');
+
+
+
+despues en la vista donde creamos el id="root"
+devemos agregar el archivo index.js de la siguiente manera
+
+<script type="text/javascript" src="js/index.js"></script>
+
+despues de eso ya podemos ver nuestra app hecha en react tal y como funcionaba 
+individualmente 
+
+
+por ultimo es para ya tenernlo funiconando como usamos en el proyecto de react 
+usamos el icono de carrito 
+
+debemos asociar el archivo del icono en 
+
+
+
+
+
+
+
+
+
+

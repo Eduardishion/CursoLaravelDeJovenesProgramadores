@@ -1,0 +1,30 @@
+operaciones basicas crud
+https://parzibyte.me/blog/2019/03/26/crud-laravel-mysql-administrador-canciones/
+
+para evitar warnings y exportar archivos .json 
+https://github.com/webpack/webpack/issues/6700
+
+
+Target class controller does not exist - Laravel 8
+https://stackoverflow.com/questions/63807930/target-class-controller-does-not-exist-laravel-8
+
+usar 
+	
+Route::get('/productos', [ProductoController::class, 'index']);
+// or
+//Route::get('/productos', 'ProductoController@index');
+
+para vincular un un controlador con la ruta o end_point 
+
+
+
+ejemplo crear api
+y como usar laravel pagina oficial 
+https://laravel.com/docs/5.1/quickstart
+https://laravel.com/docs/5.1/quickstart
+
+
+crear modelo y controlador para crear los operaciones 
+de crear, eliminar, actulizar y listar elementos 
+
+para crear un controlador en larabel es necesario usar el siguietn comando 
