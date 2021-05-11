@@ -1,6 +1,9 @@
 ## Esta es una integracion de Laravel 8 y ReactJs 16
 ## es necesario usar MariaDB como base de datos 
 
+
+![alt preview](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+
 ## para correr el back-end
 ```
     php artisan serve
