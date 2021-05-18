@@ -1,4 +1,10 @@
-## Esta es una integracion de Laravel 8 y ReactJs 16
+## Esta es una integracion de Laravel 8 y ReactJs 16 del proyecto final del Curso PHP 2 LARAVEL Jovenes programadores 
+
+https://www.jovenesprogramadores.cl/
+
+Descripción: Las sesiones introducen a una versión actualizada del lenguaje PHP (7.x) donde se utiliza el framework Laravel ( ver más > ) para el desarrollo del back-end de un sitio web completo. Se realiza un cambio de paradigma en las bases de datos utilizando MariaDB y modificando el proyecto final del módulo PHP, adaptándolo a las nuevas tecnologías. Se hace uso de la interfaz de usuario desarrollada en el curso React como parte de la capa de presentación de la página web (Front-end). Contempla un trabajo final (misión), revisado por un tutor.
+Este curso se puede realizar desde teléfono celular o tablet, pero para aplicar los conocimientos que se van enseñando se requiere de computador.
+
 ## es necesario usar MariaDB como base de datos 
 
 
